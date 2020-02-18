@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ClientChat.MainPage">
+
+    <StackLayout x:Name="Stack">
+
+        <!-- Place new controls here -->
+        <!-->
+        <Label Text="Username" />
+        <Entry x:Name="usernameEntry" Placeholder="username" ></Entry>
+
+            <Button Text="Connect to Server" x:Name="btnServer" Clicked="btnServer_Clicked"/>
+-->
+            <Label Text="Send Data:" />
+        <Entry x:Name="usernameEntry1" Placeholder="Write a Message..." ></Entry>
+        <Button Text="Send Message!" x:Name="btnSend" Clicked="btnSend_Clicked"/>
+        
+        <Label x:Name="allData" WidthRequest="200" HeightRequest="300"></Label>
+    </StackLayout>
+    
+
+</ContentPage>
