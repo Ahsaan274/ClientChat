@@ -9,7 +9,8 @@ using Android.OS;
 
 namespace ClientChat.Droid
 {
-    [Activity(Label = "ClientChat", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "ClientChat", Icon = "@drawable/logoGif", Theme = "@style/MainTheme",
+        MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

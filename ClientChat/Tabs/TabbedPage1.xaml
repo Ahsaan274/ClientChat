@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:tabs="clr-namespace:ClientChat.Tabs"
+            mc:Ignorable="d"
+             x:Class="ClientChat.Tabs.TabbedPage1">
+    <!--
+    xmlns:tabs="clr-namespace:ClientChat.Tabs"
+    -->
+    <!--Pages can be added as references or inline-->
+    <TabbedPage.Children>
+        <NavigationPage Title="Favorites" Icon="ic_favorites.png">
+            <x:Arguments>
+                <tabs:Page1/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Friends" Icon="ic_friends.png">
+            <x:Arguments>
+                <tabs:Page2/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Nearby" Icon="ic_nearby.png">
+            <x:Arguments>
+                <tabs:Page3/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Recents" Icon="ic_recents.png">
+            <x:Arguments>
+                <tabs:Page4/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Restaurants" Icon="ic_restaurants.png">
+            <x:Arguments>
+                <tabs:Page5/>
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

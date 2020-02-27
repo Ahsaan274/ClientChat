@@ -14,7 +14,7 @@ namespace ClientChat
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
-    public partial class MainPage : ContentPage
+    partial class MainPage : ContentPage
     {
         System.Net.Sockets.TcpClient clientSocket = new System.Net.Sockets.TcpClient();
         NetworkStream serverStream = default(NetworkStream);
@@ -23,7 +23,8 @@ namespace ClientChat
         public MainPage()
         {
             InitializeComponent();
-            ConnectToServer(macAddress());
+          //  ConnectToServer(macAddress());
+           
         }
 
         private void sendData(string message)
@@ -57,13 +58,8 @@ namespace ClientChat
                 int buffSize = 0;
                 byte[] inStream = new byte[1024];
                 buffSize = clientSocket.ReceiveBufferSize;
-                /*serverStream.Read(inStream, 0,inStream.Length);
-                string returndata = System.Text.Encoding.ASCII.GetString(inStream);
-                readData = "" + returndata;*/
-                //msg();
                 while ((buffSize = serverStream.Read(inStream, 0, inStream.Length)) > 0)
                 {
-                    //Device.BeginInvokeOnMainThread(msg);
                     Device.BeginInvokeOnMainThread(() =>
                     {
                         allData.Text += System.Text.Encoding.ASCII.GetString(inStream, 0, buffSize) + "\n";
@@ -87,7 +83,7 @@ namespace ClientChat
             ConnectToServer(macAddress());
 
         }
-        private string macAddress()
+        public string macAddress()
         {
             var ni = NetworkInterface.GetAllNetworkInterfaces().OrderBy(intf => intf.NetworkInterfaceType)
               .FirstOrDefault(intf => intf.OperationalStatus == OperationalStatus.Up

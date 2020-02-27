@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ClientChat.Views.LoginPage">
+    
+    <ContentPage.Content>
+        <StackLayout Spacing="20" Padding="50" VerticalOptions="CenterAndExpand">
+
+            <Image x:Name="myImage" Source="logo.jpg"></Image>
+
+            <Entry Placeholder="Email" TextColor="#0B5C97" x:Name="Email"></Entry>
+            <Entry Placeholder="Password" IsPassword="True" TextColor="#0B5C97" x:Name="Password"></Entry>
+            
+            <Button Text="Log In" BackgroundColor="#0B5C97" TextColor="White" WidthRequest="50"
+                    HeightRequest="40" Margin="70,0,70,0" BorderRadius ="5" Clicked="LoginBtn"></Button>
+            <Label Text="Forget Password" Margin="115,-10,-20,0" TextColor="Red" 
+                   TextDecorations="Underline" TextType="Html" VerticalTextAlignment="Center"></Label>
+           
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClientChat.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,8 @@ namespace ClientChat
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new SplashPage());
+            //MainPage = new Testing();
         }
 
         protected override void OnStart()
