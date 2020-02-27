@@ -17,7 +17,8 @@ namespace ClientChat.Tabs
         {
             InitializeComponent();
             On<Xamarin.Forms.PlatformConfiguration.Android>().SetToolbarPlacement(ToolbarPlacement.Bottom);
-            NavigationPage.SetHasNavigationBar(this, false); 
+            NavigationPage.SetHasNavigationBar(this, false);
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
