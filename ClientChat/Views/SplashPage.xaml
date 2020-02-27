@@ -10,13 +10,8 @@
              >
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-          
             <ff:CachedImage x:Name="Gif" Source="logoGif.gif"/>
-            
-            
+            <!--<Image  x:Name="Gif" Source="logoG.gif" IsAnimationPlaying="True"></Image>-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
