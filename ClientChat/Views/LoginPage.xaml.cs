@@ -40,15 +40,15 @@ namespace ClientChat.Views
             {
                 if (dt.Rows[0]["password"].ToString() == Password.Text)
                 {
-                    DisplayAlert("Connected", "Welcome to " + Email.Text, "OK");
+                    DisplayAlert("You are logged in!", "Welcome  " + Email.Text, "Ok");
                     Application.Current.MainPage = new NavigationPage(new TabbedPage1());
                     
                 }
                 else
-                    DisplayAlert("Error", "Invalid Credentials", "Ok");
+                    DisplayAlert("Error!", "Invalid Credentials", "Ok");
             }
             else
-                DisplayAlert("Error", "User does not exist", "Use valid Credentials");
+                DisplayAlert("Error!", "User does not exist", "Ok");
         }
     }
     class SerializeClass
