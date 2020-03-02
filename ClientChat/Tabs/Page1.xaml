@@ -5,16 +5,20 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:ClientChat"
              xmlns:Syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:local1="clr-namespace:System.Data;assembly=netstandard"
              mc:Ignorable="d"
              x:Class="ClientChat.Tabs.Page1"
              Title="Favorites"
              >
-    <ContentPage.BindingContext>
-        <local:ViewModel />
+    
+    <!--<ContentPage.BindingContext>
+        <local1:DataTable  x:Name="DataTable"/>
     </ContentPage.BindingContext>
+    ItemsSource="{Binding dt}"
+    -->
+    
     <Syncfusion:SfDataGrid  x:Name="gridData"
                             AutoGenerateColumns="True"
-                            ItemsSource="{Binding OrdersInfo}"
                             AllowSorting="true"
                             AllowTriStateSorting="True"
                             AllowMultiSorting="True"

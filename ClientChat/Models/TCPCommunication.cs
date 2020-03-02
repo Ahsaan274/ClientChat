@@ -1,4 +1,5 @@
-﻿using ClientChat.Views;
+﻿using ClientChat.Procedures;
+using ClientChat.Views;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -49,13 +50,28 @@ namespace ClientChat.Models
 
             return dt;
         }
+        public static DataTable GetDataProc(string procedureName,List<Procedure1> lst)
+        {
+            string a = JsonConvert.SerializeObject(lst);
+            String sql = "GETPROC::"+ procedureName+"|"+a;
+            sendData(sql);
+            serverStream.Read(inStream, 0, inStream.Length);
+
+            string Val = System.Text.Encoding.ASCII.GetString(inStream, 0, buffSize);
+
+            Val = Val.Substring(0, Val.IndexOf('&'));
+            DataTable dt = (DataTable)JsonConvert.DeserializeObject(Val, (typeof(DataTable)));
+            return dt;
+        }
         public static void sendData(string message)
         {
             byte[] outStream = System.Text.Encoding.ASCII.GetBytes(message + "$");
             serverStream.Write(outStream, 0, outStream.Length);
             serverStream.Flush();
         }
+        
     }
+    
     internal class Users
     {
         internal string USERID { get; set; }

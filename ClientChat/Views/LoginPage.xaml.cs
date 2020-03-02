@@ -1,5 +1,6 @@
 ﻿using ClientChat.Tabs;
 using Newtonsoft.Json;
+using Syncfusion.SfDataGrid.XForms;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,6 +16,7 @@ namespace ClientChat.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        public DataTable dt;
         MainPage mp = new MainPage();
         public LoginPage()
         {
@@ -35,14 +37,14 @@ namespace ClientChat.Views
 
         public void LoginBtn(object sender, EventArgs e)
         {
-            DataTable dt = Models.TCPCommunication.GetData("GET::select * from users where userid = '" + Email.Text + "'");
+            dt = Models.TCPCommunication.GetData("GET::select * from users where userid = '" + Email.Text + "'");
+            
             if (dt.Rows.Count > 0)
             {
                 if (dt.Rows[0]["password"].ToString() == Password.Text)
                 {
                     DisplayAlert("You are logged in!", "Welcome  " + Email.Text, "Ok");
                     Application.Current.MainPage = new NavigationPage(new TabbedPage1());
-                    
                 }
                 else
                     DisplayAlert("Error!", "Invalid Credentials", "Ok");
