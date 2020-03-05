@@ -5,7 +5,7 @@ using System.Text;
 
 namespace ClientChat
 {
-    class ViewModel
+     class ViewModel
     {
         public ObservableCollection<OrderInfo> OrdersInfo { get; set; }
 
@@ -26,6 +26,18 @@ namespace ClientChat
             OrdersInfo.Add(new OrderInfo(8, "E8", "Mutahhar", "Karachi", "Turkey"));
             OrdersInfo.Add(new OrderInfo(9, "E9", "Abdul Basit", "karachi", "Pakistan"));
             OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E30", "Salman", "Hyderabad", "Pakistan"));
+
         }
     }
 }

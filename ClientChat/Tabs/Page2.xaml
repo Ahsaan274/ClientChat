@@ -5,11 +5,31 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:ClientChat"
              xmlns:Syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:local1="clr-namespace:ClientChat.Tabs"
              mc:Ignorable="d"
              x:Class="ClientChat.Tabs.Page2"
              Title="Friends"
              >
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--<Style x:Key="cellstyle" TargetType="Syncfusion:GridCell">
+                <Setter Property="FontSize" Value="20"></Setter>
+            </Style>-->
+            <OnPlatform x:Key="textSize"
+                  x:TypeArguments="x:Double">
+                <On Platform="iOS,UWP" Value="14" />
+                <On Platform="Android" Value="20" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+
+
     <ContentPage.BindingContext>
+
         <local:ViewModel />
     </ContentPage.BindingContext>
     <Syncfusion:SfDataGrid  x:Name="gridData"
@@ -22,7 +42,20 @@
                             ColumnSizer="Star"
                             AllowDraggingColumn="True"
                             AllowDraggingRow="True"
-                            SelectionMode="Single"
-                            >
+                            SelectionMode="Single">
+        <Syncfusion:SfDataGrid.Columns>
+            
+            <!--<Syncfusion:GridTextColumn HeaderFontAttribute="Bold"
+                                       HeaderTextAlignment="Start"
+                                       LineBreakMode="TailTruncation"
+                                       MappingName="{Binding dt}"
+                                       Padding="5, 0, 0, 0"
+                                       HeaderCellTextSize="{StaticResource textSize}"
+                                       CellTextSize="{StaticResource textSize}"
+                                       TextAlignment="Start"
+                                       >
+                </Syncfusion:GridTextColumn>-->
+        </Syncfusion:SfDataGrid.Columns>
+
     </Syncfusion:SfDataGrid>
 </ContentPage>

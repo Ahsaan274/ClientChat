@@ -22,7 +22,7 @@ namespace ClientChat.Models
 
             readData = "Conected to Chat Server ...";
             //msg();
-            clientSocket.Connect("192.168.10.8", 5000);
+            clientSocket.Connect("192.168.10.7", 5000);
             serverStream = clientSocket.GetStream();
 
             byte[] outStream = System.Text.Encoding.ASCII.GetBytes(clientName + "$");
@@ -41,7 +41,7 @@ namespace ClientChat.Models
         public static DataTable GetData(string sql)
         {
             sendData(sql);
-            serverStream.Read(inStream, 0, inStream.Length);
+           serverStream.Read(inStream, 0, inStream.Length);
 
             string Val = System.Text.Encoding.ASCII.GetString(inStream, 0, buffSize);
 

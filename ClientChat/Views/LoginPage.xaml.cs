@@ -43,7 +43,7 @@ namespace ClientChat.Views
             {
                 if (dt.Rows[0]["password"].ToString() == Password.Text)
                 {
-                    DisplayAlert("You are logged in!", "Welcome  " + Email.Text, "Ok");
+                  //  DisplayAlert("You are logged in!", "Welcome  " + Email.Text, "Ok");
                     Application.Current.MainPage = new NavigationPage(new TabbedPage1());
                 }
                 else

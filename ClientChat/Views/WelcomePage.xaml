@@ -7,25 +7,4 @@
              xmlns:Syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              mc:Ignorable="d"
              x:Class="ClientChat.WelcomePage">
-    <!--
-    <ContentPage.BindingContext>
-        <local:ViewModel />
-    </ContentPage.BindingContext>
-    <Syncfusion:SfDataGrid  x:Name="gridData"
-                            AutoGenerateColumns="True"
-                            ItemsSource="{Binding OrdersInfo}"
-                            AllowSorting="true"
-                            AllowTriStateSorting="True"
-                            AllowMultiSorting="True"
-                            VerticalOverScrollMode="None"
-                            ColumnSizer="Star"
-                            AllowDraggingColumn="True"
-                            AllowDraggingRow="True"
-                            SelectionMode="Single"
-                            >
-        
-
-    </Syncfusion:SfDataGrid>
-    -->
-
 </ContentPage>

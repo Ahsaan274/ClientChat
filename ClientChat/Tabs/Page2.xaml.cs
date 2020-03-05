@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -10,7 +11,6 @@ using Xamarin.Forms.Xaml;
 
 namespace ClientChat.Tabs
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page2 : ContentPage
     {
         public Page2()
@@ -18,10 +18,11 @@ namespace ClientChat.Tabs
             InitializeComponent();
             fillData();
         }
+        
         public void fillData()
         {
             DataTable dt = Models.TCPCommunication.GetData("GET::select * from attendance");
-            gridData.ItemsSource = dt;
+            gridData.ItemsSource = dt;    
         }
     }
 }

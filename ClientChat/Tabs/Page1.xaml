@@ -9,15 +9,9 @@
              mc:Ignorable="d"
              x:Class="ClientChat.Tabs.Page1"
              Title="Favorites"
+             
              >
-    
-    <!--<ContentPage.BindingContext>
-        <local1:DataTable  x:Name="DataTable"/>
-    </ContentPage.BindingContext>
-    ItemsSource="{Binding dt}"
-    -->
-    
-    <Syncfusion:SfDataGrid  x:Name="gridData"
+    <Syncfusion:SfDataGrid  x:Name="gridData"              
                             AutoGenerateColumns="True"
                             AllowSorting="true"
                             AllowTriStateSorting="True"
@@ -27,6 +21,7 @@
                             AllowDraggingColumn="True"
                             AllowDraggingRow="True"
                             SelectionMode="Single"
+                           
                             >
     </Syncfusion:SfDataGrid>
 </ContentPage>

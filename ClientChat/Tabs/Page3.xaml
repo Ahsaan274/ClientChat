@@ -5,23 +5,56 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:ClientChat"
              xmlns:Syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:local1="clr-namespace:ClientChat.Tabs"
              mc:Ignorable="d"
              x:Class="ClientChat.Tabs.Page3"
              Title="Nearby">
+
+    <!--<Label Text="Ehsan" FontSize="100" Margin="0,0,0,0"/>-->
     <ContentPage.BindingContext>
         <local:ViewModel />
     </ContentPage.BindingContext>
-    <Syncfusion:SfDataGrid  x:Name="gridData"
+    <!--<ContentPage.Content>
+        <Grid Padding="20">
+            <local1:PinchToZoomContainer>
+                <local1:PinchToZoomContainer.Content>
+                    <Syncfusion:SfDataGrid  x:Name="gridData"
                             AutoGenerateColumns="True"
                             ItemsSource="{Binding OrdersInfo}"
                             AllowSorting="true"
                             AllowTriStateSorting="True"
+                                            
+                            GridDoubleTapped="gridData_GridDoubleTapped"
                             AllowMultiSorting="True"
+                            AllowResizingColumn="True"
                             VerticalOverScrollMode="None"
                             ColumnSizer="Star"
                             AllowDraggingColumn="True"
                             AllowDraggingRow="True"
                             SelectionMode="Single"
                             >
+                    </Syncfusion:SfDataGrid>
+                </local1:PinchToZoomContainer.Content>
+            </local1:PinchToZoomContainer>
+        </Grid>
+    </ContentPage.Content>-->
+    
+    <Syncfusion:SfDataGrid  x:Name="gridData"
+                            AutoGenerateColumns="True"
+                            ItemsSource="{Binding OrdersInfo}"
+                            AllowSorting="true"
+                            AllowTriStateSorting="True"
+                            AllowMultiSorting="True"
+                            GridDoubleTapped="gridData_GridDoubleTapped_1"
+                            AllowResizingColumn="True"
+                            VerticalOverScrollMode="Bounce"
+                          
+                            ColumnSizer="Star"
+                            AllowDraggingColumn="True"
+                            AllowDraggingRow="True"
+                            SelectionMode="Single"
+                            >
     </Syncfusion:SfDataGrid>
+    
 </ContentPage>
+    
