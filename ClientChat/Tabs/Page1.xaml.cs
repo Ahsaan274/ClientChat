@@ -22,8 +22,8 @@ namespace ClientChat.Tabs
 
         public void getProcData()
         {
-            List<Procedure1> proc = new List<Procedure1>();
-            proc.Add(new Procedure1 { name = "", type = "", direction = "", value = "", length = 1 }) ;
+            /*List<Procedure1> proc = new List<Procedure1>();
+            proc.Add(new Procedure1 { name = "", type = "", direction = "", value = "", length = 1 }) ;*/
         }
         public void fillData()
         {

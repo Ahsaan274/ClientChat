@@ -31,7 +31,7 @@ namespace ClientChat.Views
 
             SerializeClass serialData = new SerializeClass { Email = email, Password = password };
             string result = JsonConvert.SerializeObject(serialData);
-
+            Application.Current.MainPage = new NavigationPage(new TabbedPage1());
 
         }
 

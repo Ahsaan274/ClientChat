@@ -18,7 +18,7 @@
         </NavigationPage>
         <NavigationPage Title="Friends" Icon="ic_friends.png">
             <x:Arguments>
-                <tabs:Page2/>
+                <tabs:Page22/>
             </x:Arguments>
         </NavigationPage>
         <NavigationPage Title="Nearby" Icon="ic_nearby.png">

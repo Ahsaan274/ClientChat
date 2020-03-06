@@ -45,10 +45,10 @@
                             AllowSorting="true"
                             AllowTriStateSorting="True"
                             AllowMultiSorting="True"
-                            GridDoubleTapped="gridData_GridDoubleTapped_1"
+                            
                             AllowResizingColumn="True"
                             VerticalOverScrollMode="Bounce"
-                          
+                                                    
                             ColumnSizer="Star"
                             AllowDraggingColumn="True"
                             AllowDraggingRow="True"

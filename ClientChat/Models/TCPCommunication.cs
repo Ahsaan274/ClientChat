@@ -22,7 +22,7 @@ namespace ClientChat.Models
 
             readData = "Conected to Chat Server ...";
             //msg();
-            clientSocket.Connect("192.168.10.7", 5000);
+            clientSocket.Connect("192.168.10.6", 5000);
             serverStream = clientSocket.GetStream();
 
             byte[] outStream = System.Text.Encoding.ASCII.GetBytes(clientName + "$");
@@ -41,19 +41,19 @@ namespace ClientChat.Models
         public static DataTable GetData(string sql)
         {
             sendData(sql);
-           serverStream.Read(inStream, 0, inStream.Length);
+            serverStream.Read(inStream, 0, inStream.Length);
 
             string Val = System.Text.Encoding.ASCII.GetString(inStream, 0, buffSize);
 
-            Val = Val.Substring(0, Val.IndexOf('&'));       
+            Val = Val.Substring(0, Val.IndexOf('&'));
             DataTable dt = (DataTable)JsonConvert.DeserializeObject(Val, (typeof(DataTable)));
 
             return dt;
         }
-        public static DataTable GetDataProc(string procedureName,List<Procedure1> lst)
+        public static DataTable GetDataProc(string procedureName, List<Procedure1> lst)
         {
             string a = JsonConvert.SerializeObject(lst);
-            String sql = "GETPROC::"+ procedureName+"|"+a;
+            String sql = "GETPROC::" + procedureName + "|" + a;
             sendData(sql);
             serverStream.Read(inStream, 0, inStream.Length);
 
@@ -65,13 +65,14 @@ namespace ClientChat.Models
         }
         public static void sendData(string message)
         {
+
             byte[] outStream = System.Text.Encoding.ASCII.GetBytes(message + "$");
             serverStream.Write(outStream, 0, outStream.Length);
             serverStream.Flush();
         }
-        
+
     }
-    
+
     internal class Users
     {
         internal string USERID { get; set; }
