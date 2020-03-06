@@ -31,19 +31,23 @@ namespace ClientChat.Views
 
             SerializeClass serialData = new SerializeClass { Email = email, Password = password };
             string result = JsonConvert.SerializeObject(serialData);
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
             Application.Current.MainPage = new NavigationPage(new TabbedPage1());
 
         }
-
         public void LoginBtn(object sender, EventArgs e)
         {
             dt = Models.TCPCommunication.GetData("GET::select * from users where userid = '" + Email.Text + "'");
-            
+
             if (dt.Rows.Count > 0)
             {
                 if (dt.Rows[0]["password"].ToString() == Password.Text)
                 {
-                  //  DisplayAlert("You are logged in!", "Welcome  " + Email.Text, "Ok");
+                    //  DisplayAlert("You are logged in!", "Welcome  " + Email.Text, "Ok");
                     Application.Current.MainPage = new NavigationPage(new TabbedPage1());
                 }
                 else
@@ -57,6 +61,5 @@ namespace ClientChat.Views
     {
         public string Email { get; set; }
         public string Password { get; set; }
-
     }
 }
