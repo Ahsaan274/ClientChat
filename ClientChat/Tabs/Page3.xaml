@@ -4,41 +4,23 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:ClientChat"
-             xmlns:Syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             
              xmlns:local1="clr-namespace:ClientChat.Tabs"
+             xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              mc:Ignorable="d"
              x:Class="ClientChat.Tabs.Page3"
              Title="Nearby">
 
     <!--<Label Text="Ehsan" FontSize="100" Margin="0,0,0,0"/>-->
-    <ContentPage.BindingContext>
+    <!--<ContentPage.BindingContext>
         <local:ViewModel />
     </ContentPage.BindingContext>
-    <!--<ContentPage.Content>
-        <Grid Padding="20">
-            <local1:PinchToZoomContainer>
-                <local1:PinchToZoomContainer.Content>
-                    <Syncfusion:SfDataGrid  x:Name="gridData"
-                            AutoGenerateColumns="True"
-                            ItemsSource="{Binding OrdersInfo}"
-                            AllowSorting="true"
-                            AllowTriStateSorting="True"
-                                            
-                            GridDoubleTapped="gridData_GridDoubleTapped"
-                            AllowMultiSorting="True"
-                            AllowResizingColumn="True"
-                            VerticalOverScrollMode="None"
-                            ColumnSizer="Star"
-                            AllowDraggingColumn="True"
-                            AllowDraggingRow="True"
-                            SelectionMode="Single"
-                            >
-                    </Syncfusion:SfDataGrid>
-                </local1:PinchToZoomContainer.Content>
-            </local1:PinchToZoomContainer>
-        </Grid>
-    </ContentPage.Content>-->
     
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local1:ImageConverter x:Key="imageConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <Syncfusion:SfDataGrid  x:Name="gridData"
                             AutoGenerateColumns="True"
                             ItemsSource="{Binding OrdersInfo}"
@@ -54,7 +36,42 @@
                             AllowDraggingRow="True"
                             SelectionMode="Single"
                             >
-    </Syncfusion:SfDataGrid>
-    
+    </Syncfusion:SfDataGrid>-->
+    <ContentPage.BindingContext>
+        <local:ViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local1:ImageConverter x:Key="imageConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <StackLayout Orientation="Vertical" >
+        <sfgrid:SfDataGrid x:Name="dataGrid" 
+                           ColumnSizer="Auto"
+                           AllowDraggingRow="True" BackgroundColor="Yellow"
+                           AllowSorting="True"
+                           AllowEditing="True"
+                           AllowDraggingColumn="True"
+                           ItemsSource="{Binding OrdersInfo}" 
+                           AutoGenerateColumns="False" 
+                           AllowGroupExpandCollapse="True"
+                           SelectionMode="Single">
+            <sfgrid:SfDataGrid.Columns>
+
+                <!--<sfgrid:GridPickerColumn ItemsSource="{Binding CustomerNames, Source={x:Reference viewModel}}" MappingName="Customer" HeaderText="Customer"/>-->
+                <sfgrid:GridTextColumn HeaderText="Order ID" MappingName="OrderID" />
+                <sfgrid:GridTextColumn HeaderText="EmployeeID" MappingName="CustomerID" />
+                <sfgrid:GridTextColumn HeaderText="CustomerID" MappingName="CustomerName"/>
+                
+                <sfgrid:GridImageColumn MappingName="DealerImage"  DisplayBinding="{Binding DealerImage, Converter={StaticResource imageConverter}}" />
+            </sfgrid:SfDataGrid.Columns>
+
+
+        </sfgrid:SfDataGrid>
+
+    </StackLayout>
 </ContentPage>
     

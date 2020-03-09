@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,17 +28,18 @@ namespace ClientChat.Tabs
             fillData();
         }
 
+
         [Obsolete]
         public void fillData()
         {
             DataTable dt = Models.TCPCommunication.GetData("GET::select * from attendance");
-            gridData.Columns.Add(new GridSwitchColumn()
+           /* gridData.Columns.Add(new GridSwitchColumn()
             {
                 MappingName = "User Image",
-                DisplayBinding = { },
+                DisplayBinding = { Binding DealerImage, Converter = { StaticResource imageConverter } },
 
-            });
-            gridData.Columns.Add(new GridTextColumn()
+            });*/
+           /* gridData.Columns.Add(new GridTextColumn()
             {
                 MappingName = "OrderID",
                 HeaderCellTextSize = 14,
@@ -60,7 +62,25 @@ namespace ClientChat.Tabs
                 HeaderCellTextSize = 14,
                 FontAttribute = FontAttributes.Bold,
                 CellTextSize = 20
-            });
+            });*/
+        }
+    }
+    public class ImageConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+
+            if (value != null)
+            {
+                return ImageSource.FromResource("ClientChat.dna.png");
+            }
+            else
+                return "";
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

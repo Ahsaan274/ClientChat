@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,8 @@ namespace ClientChat.Tabs
         public void fillData()
         {
             DataTable dt = Models.TCPCommunication.GetData("GET::select * from users");
-            gridData.ItemsSource = dt;
+            //gridData.ItemsSource = dt;
         }
     }
+    
 }
