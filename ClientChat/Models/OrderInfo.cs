@@ -1,200 +1,82 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace DataGridSample
+namespace ClientChat
 {
-    public class OrderInfo : INotifyPropertyChanged
+    class OrderInfo : INotifyPropertyChanged
     {
-        public OrderInfo()
+        private int orderID;
+        private string customerID;
+        private string customerName;
+        private string shipCity;
+        private string shipCountry;
+
+        public OrderInfo(int orderID, string customerID, string customerName, string shipCity, string shipCountry)
         {
-
-        }
-
-        #region private variables
-        private ImageSource _dealer;
-        private int _orderID;
-        private double _employeeID;
-        private string _customerID;
-        private string _firstname;
-        private string _lastname;
-        private string _gender;
-        private string _shipCity;
-        private string _shipCountry;
-        private double _freight;
-        private DateTime? _shippingDate;
-        private string _isClosed;
-
-        #endregion
-
-        #region Public Properties
-        public ImageSource DealerImage
-        {
-            get { return _dealer; }
-            set
-            {
-                this._dealer = value;
-            }
+            this.orderID = orderID;
+            this.customerID = customerID;
+            this.customerName = customerName;
+            this.shipCity = shipCity;
+            this.shipCountry = shipCountry;
         }
         public int OrderID
         {
-            get
-            {
-                return _orderID;
-            }
+            get { return orderID; }
             set
             {
-                this._orderID = value;
-                RaisePropertyChanged("OrderID");
+                this.orderID = value;
+                RaisePropertyChnaged("orderID");
             }
         }
-
-        public double EmployeeID
-        {
-            get
-            {
-                return _employeeID;
-            }
-            set
-            {
-                this._employeeID = value;
-                RaisePropertyChanged("EmployeeID");
-            }
-        }
-
         public string CustomerID
         {
-            get
-            {
-                return _customerID;
-            }
+
+            get { return customerID; }
             set
             {
-                this._customerID = value;
-                RaisePropertyChanged("CustomerID");
+                this.customerID = value;
+                RaisePropertyChnaged("customerID");
             }
         }
-
-        public string FirstName
+        public string CustomerName
         {
-            get
-            {
-                return _firstname;
-            }
+
+            get { return customerName; }
             set
             {
-                this._firstname = value;
-                RaisePropertyChanged("FirstName");
+                this.customerName = value;
+                RaisePropertyChnaged("customerName");
             }
         }
-
-        public string LastName
-        {
-            get
-            {
-                return _lastname;
-            }
-            set
-            {
-                this._lastname = value;
-                RaisePropertyChanged("LastName");
-            }
-        }
-
-        public string Gender
-        {
-            get
-            {
-                return _gender;
-            }
-            set
-            {
-                this._gender = value;
-                RaisePropertyChanged("Gender");
-            }
-        }
-
         public string ShipCity
         {
-            get
-            {
-                return _shipCity;
-            }
+
+            get { return shipCity; }
             set
             {
-                this._shipCity = value;
-                RaisePropertyChanged("ShipCity");
+                this.shipCity = value;
+                RaisePropertyChnaged("shipCity");
             }
         }
-
         public string ShipCountry
         {
-            get
-            {
-                return _shipCountry;
-            }
+
+            get { return shipCountry; }
             set
             {
-                this._shipCountry = value;
-                RaisePropertyChanged("ShipCountry");
+                this.shipCountry = value;
+                RaisePropertyChnaged("shipCountry");
             }
         }
-
-        public double Freight
-        {
-            get
-            {
-                return _freight;
-            }
-            set
-            {
-                this._freight = value;
-                RaisePropertyChanged("Freight");
-            }
-        }
-
-        public string IsClosed
-        {
-            get
-            {
-                return _isClosed;
-            }
-            set
-            {
-                this._isClosed = value;
-                RaisePropertyChanged("IsClosed");
-            }
-        }
-
-        public DateTime? ShippingDate
-        {
-            get
-            {
-                return _shippingDate;
-            }
-            set
-            {
-                this._shippingDate = value;
-                RaisePropertyChanged("ShippingDate");
-            }
-        }
-
-        #endregion
-
-        #region INotifyPropertyChanged implementation
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void RaisePropertyChanged(String Name)
+        private void RaisePropertyChnaged(string name)
         {
-            if (PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(Name));
+            if (this.PropertyChanged != null)
+                this.PropertyChanged(this, new PropertyChangedEventArgs(name));
         }
-
-        #endregion
     }
 }

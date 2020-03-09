@@ -25,7 +25,7 @@ namespace ClientChat.Tabs
         public Page3()
         {
             InitializeComponent();
-            fillData();
+            //fillData();
         }
 
 

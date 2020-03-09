@@ -1,56 +1,43 @@
-﻿using Syncfusion.Data.Extensions;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace DataGridSample
+namespace ClientChat
 {
-    public class ViewModel : NotificationObject
+     class ViewModel
     {
-        public ObservableCollection<string> CustomerNames { get; set; }
-        public string[] Customers = new string[] { "Adams", "Tim", "Rooney", "Andrew", "Harry" };
+        public ObservableCollection<OrderInfo> OrdersInfo { get; set; }
 
-        OrderInfoRepository order;
         public ViewModel()
         {
-            this.CustomerNames = Customers.ToObservableCollection();
-            SetRowstoGenerate(20);
+            this.OrdersInfo = new ObservableCollection<OrderInfo>();
+            GenerateOrders();
         }
-
-        #region ItemsSource
-
-        private ObservableCollection<OrderInfo> ordersInfo;
-        public ObservableCollection<OrderInfo> OrdersInfo
+        private void GenerateOrders()
         {
-            get { return ordersInfo; }
-            set { this.ordersInfo = value; }
+            OrdersInfo.Add(new OrderInfo(1, "E1", "Ehsan", "Sukkur", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(2, "E2", "khurram", "Karachi", "Thiland"));
+            OrdersInfo.Add(new OrderInfo(3, "E8", "Mutahhar", "Karachi", "Turkey"));
+            OrdersInfo.Add(new OrderInfo(4, "E4", "Abdul Basit", "karachi", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(5, "E5", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(6, "E6", "Ehsan", "Sukkur", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(7, "E2", "khurram", "Karachi", "Thiland"));
+            OrdersInfo.Add(new OrderInfo(8, "E8", "Mutahhar", "Karachi", "Turkey"));
+            OrdersInfo.Add(new OrderInfo(9, "E9", "Abdul Basit", "karachi", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E10", "Shabbir", "Hyderabad", "Pakistan"));
+            OrdersInfo.Add(new OrderInfo(10, "E30", "Salman", "Hyderabad", "Pakistan"));
+
         }
-
-        #endregion
-
-        #region ItemSource Generator
-
-        public void SetRowstoGenerate(int count)
-        {
-            order = new OrderInfoRepository();
-            ordersInfo = order.GetOrderDetails(count);
-        }
-
-        #endregion
-    }
-
-    public class NotificationObject : INotifyPropertyChanged
-    {
-        public void RaisePropertyChanged(string propName)
-        {
-            if (this.PropertyChanged != null)
-                this.PropertyChanged(this, new PropertyChangedEventArgs(propName));
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }

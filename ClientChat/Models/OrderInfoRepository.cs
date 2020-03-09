@@ -26,18 +26,18 @@ namespace DataGridSample
 
             #region GetOrderDetails
 
-            public ObservableCollection<OrderInfo> GetOrderDetails(int count)
+            public ObservableCollection<OrderInfoT> GetOrderDetails(int count)
             {
                 SetShipCity();
                 this.OrderedDates = GetDateBetween(2000, 2014, count);
-                ObservableCollection<OrderInfo> orderDetails = new ObservableCollection<OrderInfo>();
+                ObservableCollection<OrderInfoT> orderDetails = new ObservableCollection<OrderInfoT>();
 
                 for (int i = 10001; i <= count + 10000; i++)
                 {
                     var shipcountry = ShipCountry[random.Next(5)];
                     var shipcitycoll = ShipCity[shipcountry];
 
-                    var ord = new OrderInfo()
+                    var ord = new OrderInfoT()
                     {
                         DealerImage = ImageSource.FromResource("DataGridDemo.Buchanan.png"),
                         OrderID = i,

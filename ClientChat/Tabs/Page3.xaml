@@ -7,38 +7,13 @@
              
              xmlns:local1="clr-namespace:ClientChat.Tabs"
              xmlns:sfgrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:local2="clr-namespace:DataGridSample"
              mc:Ignorable="d"
              x:Class="ClientChat.Tabs.Page3"
              Title="Nearby">
 
-    <!--<Label Text="Ehsan" FontSize="100" Margin="0,0,0,0"/>-->
-    <!--<ContentPage.BindingContext>
-        <local:ViewModel />
-    </ContentPage.BindingContext>
-    
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <local1:ImageConverter x:Key="imageConverter"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-    <Syncfusion:SfDataGrid  x:Name="gridData"
-                            AutoGenerateColumns="True"
-                            ItemsSource="{Binding OrdersInfo}"
-                            AllowSorting="true"
-                            AllowTriStateSorting="True"
-                            AllowMultiSorting="True"
-                            
-                            AllowResizingColumn="True"
-                            VerticalOverScrollMode="Bounce"
-                                                    
-                            ColumnSizer="Star"
-                            AllowDraggingColumn="True"
-                            AllowDraggingRow="True"
-                            SelectionMode="Single"
-                            >
-    </Syncfusion:SfDataGrid>-->
     <ContentPage.BindingContext>
-        <local:ViewModel x:Name="viewModel" />
+        <local2:ImageViewModel x:Name="viewModel" />
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>
@@ -46,7 +21,6 @@
             <local1:ImageConverter x:Key="imageConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-
 
     <StackLayout Orientation="Vertical" >
         <sfgrid:SfDataGrid x:Name="dataGrid" 
@@ -59,19 +33,21 @@
                            AutoGenerateColumns="False" 
                            AllowGroupExpandCollapse="True"
                            SelectionMode="Single">
+
             <sfgrid:SfDataGrid.Columns>
 
                 <!--<sfgrid:GridPickerColumn ItemsSource="{Binding CustomerNames, Source={x:Reference viewModel}}" MappingName="Customer" HeaderText="Customer"/>-->
+
                 <sfgrid:GridTextColumn HeaderText="Order ID" MappingName="OrderID" />
-                <sfgrid:GridTextColumn HeaderText="EmployeeID" MappingName="CustomerID" />
-                <sfgrid:GridTextColumn HeaderText="CustomerID" MappingName="CustomerName"/>
-                
+                <sfgrid:GridTextColumn HeaderText="EmployeeID" MappingName="EmployeeID" />
+                <sfgrid:GridTextColumn HeaderText="CustomerID" MappingName="CustomerID"/>
+                <sfgrid:GridTextColumn HeaderText="First Name"  MappingName="FirstName"/>
+                <sfgrid:GridTextColumn HeaderText="Last Name" MappingName="LastName"/>
                 <sfgrid:GridImageColumn MappingName="DealerImage"  DisplayBinding="{Binding DealerImage, Converter={StaticResource imageConverter}}" />
             </sfgrid:SfDataGrid.Columns>
-
-
         </sfgrid:SfDataGrid>
 
     </StackLayout>
+
 </ContentPage>
     

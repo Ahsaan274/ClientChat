@@ -5,12 +5,16 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:ClientChat"
              xmlns:Syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:local2="clr-namespace:DataGridSample"
+             xmlns:local1="clr-namespace:ClientChat.Tabs"
              mc:Ignorable="d"
              x:Class="ClientChat.Tabs.Page5"
              Title="Restaurants">
     <ContentPage.BindingContext>
         <local:ViewModel />
     </ContentPage.BindingContext>
+
+
     <Syncfusion:SfDataGrid  x:Name="gridData"
                             AutoGenerateColumns="True"
                             ItemsSource="{Binding OrdersInfo}"
@@ -22,6 +26,6 @@
                             AllowDraggingColumn="True"
                             SelectionMode="Multiple"
                             >
+        
     </Syncfusion:SfDataGrid>
-
 </ContentPage>
