@@ -22,7 +22,7 @@ namespace ClientChat.Models
 
             readData = "Conected to Chat Server ...";
             //msg();
-            clientSocket.Connect("192.168.10.8", 5000);
+            clientSocket.Connect("192.168.10.5", 5000);
             serverStream = clientSocket.GetStream();
 
             byte[] outStream = System.Text.Encoding.ASCII.GetBytes(clientName + "$");

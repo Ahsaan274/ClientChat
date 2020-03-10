@@ -19,10 +19,13 @@ namespace ClientChat.Tabs
             InitializeComponent();
             fillData();
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            
+        }
         public void fillData()
         {
-            //DataTable dt = Models.TCPCommunication.GetData("GET::select * from users");
-            //gridData.ItemsSource = dt;
 
         }
     }

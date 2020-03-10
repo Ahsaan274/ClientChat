@@ -23,7 +23,7 @@
     </ContentPage.Resources>
 
     <StackLayout Orientation="Vertical" >
-        <sfgrid:SfDataGrid x:Name="dataGrid" 
+        <sfgrid:SfDataGrid x:Name="gridData" 
                            ColumnSizer="Auto"
                            AllowDraggingRow="True" BackgroundColor="Yellow"
                            AllowSorting="True"

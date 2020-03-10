@@ -20,26 +20,29 @@ namespace ClientChat.Tabs
             fillData();
 
         }
+        protected override void OnAppearing()
+        {
+           /* base.OnAppearing();
+            gridData.Columns.Add(new GridTextColumn()
+            {
+                MappingName = "USERID",
+                HeaderCellTextSize = 14,
+                FontAttribute = FontAttributes.Bold,
+                CellTextSize = 16,
+            });
+
+            gridData.Columns.Add(new GridTextColumn()
+            {
+                MappingName = "USERNAME",
+                HeaderCellTextSize = 14,
+                FontAttribute = FontAttributes.Bold,
+                CellTextSize = 16,
+
+
+            });*/
+        }
         public void fillData()
         {
-            /* DataTable dt = Models.TCPCommunication.GetData("GET::select * from users");
-             gridData.ItemsSource = dt;
-             gridData.Columns.Add(new GridTextColumn()
-             {
-                 MappingName = "USERID",
-                 HeaderCellTextSize = 14,
-                 FontAttribute = FontAttributes.Bold,
-                 CellTextSize = 16,
-             });
-
-             gridData.Columns.Add(new GridTextColumn()
-             {
-                 MappingName = "USERNAME",
-                 HeaderCellTextSize = 14,
-                 FontAttribute = FontAttributes.Bold,
-                 CellTextSize = 16,
-             });
-         }*/
         }
     }
 }

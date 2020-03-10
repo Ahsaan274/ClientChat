@@ -27,19 +27,16 @@ namespace ClientChat.Tabs
             InitializeComponent();
             //fillData();
         }
-
-
-        [Obsolete]
-        public void fillData()
+        protected override void OnAppearing()
         {
-          //  DataTable dt = Models.TCPCommunication.GetData("GET::select * from attendance");
-           /* gridData.Columns.Add(new GridSwitchColumn()
+         /*   base.OnAppearing();
+
+            gridData.Columns.Add(new GridSwitchColumn()
             {
                 MappingName = "User Image",
-                DisplayBinding = { Binding DealerImage, Converter = { StaticResource imageConverter } },
-
-            });*/
-           /* gridData.Columns.Add(new GridTextColumn()
+                DisplayBinding = { }
+            });
+            gridData.Columns.Add(new GridTextColumn()
             {
                 MappingName = "OrderID",
                 HeaderCellTextSize = 14,
@@ -57,13 +54,21 @@ namespace ClientChat.Tabs
             });
             gridData.Columns.Add(new GridTextColumn()
             {
-                TextWrapping = LineBreakMode.WordWrap,
+               // TextWrapping = LineBreakMode.WordWrap,
                 MappingName = "CustomerName",
                 HeaderCellTextSize = 14,
                 FontAttribute = FontAttributes.Bold,
                 CellTextSize = 20
             });*/
         }
+
+
+        [Obsolete]
+        public void fillData()
+        {
+
+        }
+       
     }
     public class ImageConverter : IValueConverter
     {

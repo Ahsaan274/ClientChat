@@ -20,8 +20,11 @@ namespace ClientChat.Tabs
         }
         public void fillData()
         {
-          /*  DataTable dt = Models.TCPCommunication.GetData("GET::select * from attendance");
-            gridData.ItemsSource = dt;*/
+          
+        }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
         }
     }
 }

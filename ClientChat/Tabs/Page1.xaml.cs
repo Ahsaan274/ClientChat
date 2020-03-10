@@ -19,9 +19,15 @@ namespace ClientChat.Tabs
         {
             InitializeComponent();
             fillData();
+            OnAppearing();
+
         }
 
         public void fillData()
+        {
+           
+        }
+        protected override void OnAppearing()
         {
             List<Procedure1> proc = new List<Procedure1>();
             proc.Add(new Procedure1 { name = "retValue", type = "sys_refcursor", direction = "OUT", value = "", length = 0 });
