@@ -22,7 +22,7 @@ namespace ClientChat.Models
 
             readData = "Conected to Chat Server ...";
             //msg();
-            clientSocket.Connect("192.168.10.6", 5000);
+            clientSocket.Connect("192.168.10.8", 5000);
             serverStream = clientSocket.GetStream();
 
             byte[] outStream = System.Text.Encoding.ASCII.GetBytes(clientName + "$");
@@ -65,12 +65,10 @@ namespace ClientChat.Models
         }
         public static void sendData(string message)
         {
-
             byte[] outStream = System.Text.Encoding.ASCII.GetBytes(message + "$");
             serverStream.Write(outStream, 0, outStream.Length);
             serverStream.Flush();
         }
-
     }
 
     internal class Users

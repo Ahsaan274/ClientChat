@@ -28,7 +28,7 @@
                            AllowDraggingRow="True" BackgroundColor="Yellow"
                            AllowSorting="True"
                            AllowEditing="True"
-                           AllowDraggingColumn="True"
+                           AllowDraggingColumn="True" 
                            ItemsSource="{Binding OrdersInfo}" 
                            AutoGenerateColumns="False" 
                            AllowGroupExpandCollapse="True"

@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:Syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              mc:Ignorable="d"
-             x:Class="ClientChat.Tabs.Page22">
+             x:Class="ClientChat.Tabs.Page22"
+             Title="Friends">
     
     <Syncfusion:SfDataGrid  x:Name="gridData"              
                             AutoGenerateColumns="True"

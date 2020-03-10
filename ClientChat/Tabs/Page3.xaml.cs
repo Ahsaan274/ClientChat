@@ -32,7 +32,7 @@ namespace ClientChat.Tabs
         [Obsolete]
         public void fillData()
         {
-            DataTable dt = Models.TCPCommunication.GetData("GET::select * from attendance");
+          //  DataTable dt = Models.TCPCommunication.GetData("GET::select * from attendance");
            /* gridData.Columns.Add(new GridSwitchColumn()
             {
                 MappingName = "User Image",

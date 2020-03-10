@@ -20,8 +20,8 @@ namespace ClientChat.Tabs
         }
         public void fillData()
         {
-            DataTable dt = Models.TCPCommunication.GetData("GET::select * from attendance");
-            gridData.ItemsSource = dt;
+          /*  DataTable dt = Models.TCPCommunication.GetData("GET::select * from attendance");
+            gridData.ItemsSource = dt;*/
         }
     }
 }
